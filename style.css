@@ -46,13 +46,14 @@ body {
 } */
 
 
-/* Final code for the loading screen animation */
+/* Final code for the loading screen animation. 
+This is totally overkill for this project but i added anyway cause i want to show it. Learned this from yotube but the effort put in is totally worth it. It was difficutl at first but now its workable. Need for time with this one.*/
 #loader {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 9999;
+    z-index: 5;
 }
 
 .wrapper {

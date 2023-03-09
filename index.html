@@ -16,7 +16,7 @@
 
 <!-- The whole webpage is put inside #content and #loader div elements. 
 This is done for better user experience in slow connections.
-The animation will play until the webpage is loaded and js changes the display property in css. -->
+The animation will play until the webpage is loaded and javascript changes the display property in css. -->
 
 <body>
     <div id="loader">
@@ -88,7 +88,20 @@ The animation will play until the webpage is loaded and js changes the display p
             <p>&copy; 2023 Lucky Shrub. All Rights Reserved.</p>
         </footer>
     </div>
-    <script src="script.js"></script>
+    <script>
+
+// Code for loading animation and revealing webpage when it finsh loading.
+
+window.addEventListener("load", function () {
+  const loader = document.querySelector("#loader");
+  const content = document.querySelector("#content");
+  loader.style.display = "none";
+  content.style.display = "block";
+});
+
+// The above event listener function runs the fucntion passed 2nd argument when the webpage loads completely.
+// The 2nd function changes the CSS display style of #loaded to "none" and #content to "block".
+    </script>
 </body>
 
 </html>
