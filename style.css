@@ -6,6 +6,7 @@
     font-family: 'Roboto', sans-serif;
 }
 
+/* Added this code to prevent background color from showing at bottom of webpage. It took very long to find a solution for this. But i made it happen. ^ ^*/
 html,
 body {
     background-color: #266c5c;
@@ -13,7 +14,7 @@ body {
     height: 100%;
 }
 
-
+/* Website fades in when loaded */
 #content {
     display: none;
     opacity: 0;
@@ -33,6 +34,19 @@ body {
     }
 }
 
+/* Test code for loading screen */
+
+/* #loader img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+} */
+
+
+/* Final code for the loading screen animation */
 #loader {
     position: absolute;
     top: 50%;
@@ -56,10 +70,10 @@ body {
     background-color: #fff;
     left: 15%;
     transform-origin: 50%;
-    animation: circle7124 .5s alternate infinite ease;
+    animation: cirlce_1 .5s alternate infinite ease;
 }
 
-@keyframes circle7124 {
+@keyframes cirlce_1 {
     0% {
         top: 60px;
         height: 5px;
@@ -100,10 +114,10 @@ body {
     z-index: -1;
     left: 15%;
     filter: blur(1px);
-    animation: shadow046 .5s alternate infinite ease;
+    animation: shadow_1 .5s alternate infinite ease;
 }
 
-@keyframes shadow046 {
+@keyframes shadow_1 {
     0% {
         transform: scaleX(1.5);
     }
@@ -130,16 +144,7 @@ body {
     animation-delay: .3s;
 }
 
-
-#loader img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50px;
-    height: 50px;
-}
-
+/* Actual CSS for the webpage contents starts here */
 header {
     display: flex;
     position: relative;
@@ -170,6 +175,65 @@ header div p {
     color: #862f26;
 }
 
+/* basic setup */
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+    padding-bottom: 1rem;
+}
+
+section {
+    display: flex;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+/* code for navigation bar */
+
+nav {
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(105, 105, 105, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 3rem;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+nav li {
+    flex: 1 1 auto;
+    list-style: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    transition: font-size 0.25s ease-in-out;
+
+}
+
+nav li:hover {
+    color: #266c5c;
+    font-size: 2rem;
+    text-shadow: 0 0 5px white;
+}
+
+/* Code to remove default hyperlink color in web browsers */
+a:-webkit-any-link {
+    color: white;
+}
+
+/* #hero is the main center section on the webpage */
 #hero {
     position: relative;
     border-radius: 0rem;
@@ -205,60 +269,7 @@ header div p {
     opacity: 0%;
 }
 
-h1 {
-    font-size: 3rem;
-}
-
-h2 {
-    font-size: 2rem;
-    padding-bottom: 1rem;
-}
-
-nav {
-    position: absolute;
-    width: 100%;
-    z-index: 3;
-}
-
-
-nav ul {
-    display: flex;
-    flex-direction: row;
-    background-color: rgba(105, 105, 105, 0.5);
-    backdrop-filter: blur(10px);
-    border-radius: 3rem;
-    padding: 1rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-
-nav li {
-    flex: 1 1 auto;
-    list-style: none;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    text-align: center;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-    transition: font-size 0.25s ease-in-out;
-
-}
-
-nav li:hover {
-    color: #266c5c;
-    font-size: 2rem;
-    text-shadow: 0 0 5px white;
-}
-
-a:-webkit-any-link {
-    color: white;
-}
-
-section {
-    display: flex;
-    margin-left: 1rem;
-    margin-right: 1rem;
-}
-
+/* Code for UI changes when screen is small */
 @media (max-width: 960px) {
     #hero h1 {
         position: absolute;
@@ -280,6 +291,7 @@ section {
     }
 }
 
+/* code for article (section 2) */
 article {
     border-radius: 3rem;
     flex: 1 1 100%;
@@ -317,6 +329,7 @@ article h2::first-letter {
 
 }
 
+/* code for footer */
 footer {
     display: flex;
     justify-content: space-between;
